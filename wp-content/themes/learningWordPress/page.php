@@ -7,11 +7,14 @@ if (have_posts()) :
 
 		<article class="post page">
 
+			<span class="parent-link"></span>
+
 			<?php
 
 			$args = array(
-				'child_of'
-			)
+				'child_of' => get_top_ancestor_id(),
+				'title_li' => ''
+			);
 
 			?>
 
