@@ -7,11 +7,11 @@ if (have_posts()) : ?>
     <h2>Search results for: <?php the_search_query(); ?></h2>
 
     <?php
-    while (have_posts()) : the_post(); ?>
+    while (have_posts()) : the_post();
 
         get_template_part('content');
 
-    <?php endwhile;
+    endwhile;
 
 else :
     echo '<p>No content found</p>';

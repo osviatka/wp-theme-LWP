@@ -31,9 +31,14 @@
 
     </p>
 
+    <?php if ( is_search() OR is_archive()) { ?>
+    <p>
+            <?php echo get_the_excerpt(); ?>
+    <a href="<?php the_permalink(); ?>">Read more&raquo;</a>
+    </p>
 
-
-    <?php if ($post->post_excerpt){ ?>
+   <?php }else{
+     if ($post->post_excerpt){ ?>
 
         <p>
             <?php echo get_the_excerpt(); ?>
@@ -44,7 +49,9 @@
 
         the_content();
     }
-    ?>
+    }?>
+
+
 
 
 </article>
