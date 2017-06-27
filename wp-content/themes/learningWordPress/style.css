@@ -51,6 +51,21 @@ article.post:last-of-type {
 	border-bottom: none;
 }
 
+/* Aside Styles */
+article.post-aside{
+	font-size: 125%;
+	background-color: #FFF5CB;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+}
+
+.mini-meta {
+	font-size: 68%;
+	margin: 0;
+	color: #777;
+}
+
 /* Header */
 .site-header {
 	border-bottom: 1px solid #DDD;
