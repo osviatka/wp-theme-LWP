@@ -66,3 +66,19 @@ function learningWordPress_setup() {
 }
 
 add_action('after_setup_theme', 'learningWordPress_setup');
+
+// Add Widget Areas
+function ourWidgetsInit() {
+
+    register_sidebar(array(
+       'name' => 'Sidebar',
+        'id' => 'sidebar1',
+        'before_widget' => '<div class="widget-item">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
+    ));
+
+}
+
+add_action('widgets_init', 'ourWidgetsInit');

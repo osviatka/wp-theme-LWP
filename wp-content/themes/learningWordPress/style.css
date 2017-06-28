@@ -56,7 +56,8 @@ article.post-aside,
 article.post-link{
 	font-size: 125%;
 	background-color: #FFF5CB;
-	padding: 20px;
+	padding: 20px 20px 1px 20px;
+	border-bottom: none;
 	border-radius: 5px;
 	box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
 }
@@ -65,6 +66,11 @@ article.post-link{
 	font-size: 68%;
 	margin: 0;
 	color: #777;
+	display: block;
+}
+.mini-meta a {
+	color: #777;
+	text-decoration: none;
 }
 
 /* Link Post Format Styles */
@@ -73,11 +79,23 @@ article.post-link {
 	padding: 0;
 }
 
+article.post-link a {
+	display: block;
+	text-decoration: none;
+	padding: 20px;
+}
+
+.post-link-text {
+	line-height: 1.65em;
+	color: #004982;
+}
+
 /* Gallery Post Format Styles */
 article.post-gallery {
 	background-color: #222;
 	color: #FFF;
 	padding: 20px;
+	border-bottom: none;
 }
 
 article.post-gallery .gallery img {
@@ -86,6 +104,18 @@ article.post-gallery .gallery img {
 
 article.post-gallery h2 {
 	text-align: center;
+}
+
+article.post-gallery .wp-caption-text {
+	font-size: 86%;
+}
+
+article.post-gallery h2 a {
+	color: #FFF;
+	text-decoration: none;
+	font-size: 130%;
+	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 
 /* Header */
@@ -156,6 +186,18 @@ article.post-gallery h2 {
 	font-weight: bold;
 	background-color: #006ec3;
 	color: #FFF;
+}
+
+/* Main Column */
+.main-column {
+	width:66%;
+	float: left;
+}
+
+/* Side Column */
+.side-column {
+	width: 30%;
+	float: right;
 }
 
 /* Footer */
