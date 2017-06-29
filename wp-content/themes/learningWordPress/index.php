@@ -22,10 +22,7 @@ get_header();?>
 
         </div><!-- /main-column -->
 
-        <!-- secondary-column -->
-        <div class="secondary-column">
-            <?php dynamic_sidebar('sidebar1'); ?>
-        </div> <!-- secondary-column -->
+        <?php get_sidebar();  ?>
 
     </div><!-- /site-content -->
 
