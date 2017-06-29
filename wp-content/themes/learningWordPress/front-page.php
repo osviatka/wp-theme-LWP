@@ -5,13 +5,12 @@ get_header(); ?>
     <!-- site-content -->
     <div class="site-content clearfix">
 
-        <!-- main-column -->
-        <div class="main-column">
+        <h3>Custom HTML Here!</h3>
 
             <?php if (have_posts()) :
                 while (have_posts()) : the_post();
 
-                    get_template_part('content', get_post_format());
+                    the_content();
 
                 endwhile;
 
@@ -21,9 +20,7 @@ get_header(); ?>
             endif;
             ?>
 
-        </div><!-- /main-column -->
 
-        <?php get_sidebar(); ?>
 
     </div><!-- /site-content -->
 
