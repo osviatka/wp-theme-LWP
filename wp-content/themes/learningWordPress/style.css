@@ -190,6 +190,26 @@ article.post-gallery h2 a {
     color: #FFF;
 }
 
+/* Post Columns */
+.one-half{
+    width: 45%;
+    float: left;
+    margin-right: 10px;
+}
+
+.last{
+    margin-right: 0;
+}
+
+.home-columns{
+    padding-top: 20px;
+}
+.home-columns h2{
+    margin-bottom: .7em;
+}
+
+
+
 /* Main Column */
 .main-column {
     width: 66%;
