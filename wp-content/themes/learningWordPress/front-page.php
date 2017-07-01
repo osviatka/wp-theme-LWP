@@ -33,15 +33,33 @@ get_header(); ?>
                 if ($opinionPosts->have_posts()) :
 
                     while ($opinionPosts->have_posts()) : $opinionPosts->the_post(); ?>
-                        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span class="subtle-date"><?php the_time('n/j/Y'); ?></span></h4>
+                        <!-- post-item -->
+                         <div class="post-item clearfix">
+                             <!-- post-thumbnail -->
+                             <div class="square-thumbnail">
+                                 <a href="<?php the_permalink(); ?>"><?php
+                                     if (has_post_thumbnail()) {
+                                         the_post_thumbnail('square-thumbnail');
+                                     } else { ?>
 
-                        <?php the_excerpt(); ?>
+                                         <img src="<?php echo get_template_directory_uri(); ?>/images/leaf.jpg">
+
+                                     <?php } ?></a>
+                             </div><!-- /post-thumbnail -->
+
+                            <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span class="subtle-date"><?php the_time('n/j/Y'); ?></span></h4>
+
+                            <?php the_excerpt(); ?>
+
+                         </div><!-- /post-item -->
                     <?php endwhile;
 
                 else :
 
                 endif;
                 wp_reset_postdata(); ?>
+
+                <span class="horiz-center"><a href="<?php echo get_category_link(7); ?>" class="btn-a">View all Opinion Posts</a></span>
 
            </div><!-- /one - half-->
 
@@ -56,7 +74,23 @@ get_header(); ?>
                 if ($newsPosts->have_posts()) :
 
                     while ($newsPosts->have_posts()) : $newsPosts->the_post(); ?>
-                        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span class="subtle-date"><?php the_time('n/j/Y'); ?></span></h4>
+
+                <!-- post-item -->
+                <div class="post-item clearfix">
+
+                    <!-- post-thumbnail -->
+                    <div class="square-thumbnail">
+                        <a href="<?php the_permalink(); ?>"><?php
+                            if (has_post_thumbnail()) {
+                                the_post_thumbnail('square-thumbnail');
+                            } else { ?>
+
+                                <img src="<?php echo get_template_directory_uri(); ?>/images/leaf.jpg">
+
+                            <?php } ?></a>
+                    </div><!-- /post-thumbnail -->
+
+                    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span class="subtle-date"><?php the_time('n/j/Y'); ?></span></h4>
 
                         <?php the_excerpt(); ?>
                     <?php endwhile;
@@ -67,8 +101,9 @@ get_header(); ?>
                 wp_reset_postdata();
 
                 ?>
+                    <span class="horiz-center"><a href="<?php echo get_category_link(6); ?>" class="btn-a">View all News Posts</a></span>
 
-            </div><!-- /one-half -->
+                </div><!-- /one-half -->
 
         </div><!-- /home-columns -->
 
