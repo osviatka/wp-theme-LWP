@@ -93,6 +93,7 @@ get_header(); ?>
                     <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a> <span class="subtle-date"><?php the_time('n/j/Y'); ?></span></h4>
 
                         <?php the_excerpt(); ?>
+                </div><!-- /post-item -->
                     <?php endwhile;
 
                 else :
