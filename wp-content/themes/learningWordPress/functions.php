@@ -116,6 +116,11 @@ function ourWidgetsInit() {
 
 add_action('widgets_init', 'ourWidgetsInit');
 
+// Customize Appearance Options
+function learningWordPress_customize_register( $wp_customize ) {
 
+
+}
+add_action('customize_register', 'learningWordPress_customize_register');
 
 
