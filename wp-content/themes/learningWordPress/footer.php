@@ -1,5 +1,17 @@
 	<footer class="site-footer">
 
+		<div class="footer-callout clearfix">
+			<div class="footer-callout-image">
+
+			</div>
+
+			<div class="footer-callout-text">
+				<h2><?php echo get_theme_mod('lwp-footer-callout-link') ?></h2>
+
+				<p>earn more</p>
+			</div>
+		</div>
+
 		<!-- footer-widgets -->
 		<div class="footer-widgets clearfix">
 

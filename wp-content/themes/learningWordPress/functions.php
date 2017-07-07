@@ -199,3 +199,26 @@ function learningWordPress_customize_css() { ?>
 <?php }
 
 add_action('wp_head', 'learningWordPress_customize_css');
+
+
+// Add Footer callout section to admin appearance customize screen
+function lwp_footer_callout($wp_customize) {
+    $wp_customize->add_section('lwp-footer-callout-section', array(
+        'title' => 'Footer Callout'
+    ));
+
+    $wp_customize->add_setting('lwp-footer-callout-headline', array(
+        'default' => 'Example Headline Text!'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'lwp-footer-callout-headline-control', array(
+        'label' => 'Headline',
+        'section' => 'lwp-footer-callout-section',
+        'settings' => 'lwp-footer-callout-headline'
+    )));
+
+
+
+}
+
+add_action('customize_register', 'lwp_footer_callout');
