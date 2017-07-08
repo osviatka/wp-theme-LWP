@@ -217,6 +217,29 @@ function lwp_footer_callout($wp_customize) {
         'settings' => 'lwp-footer-callout-headline'
     )));
 
+    $wp_customize->add_setting('lwp-footer-callout-text', array(
+        'default' => 'Example paragraph text.'
+    ));
+
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'lwp-footer-callout-text-control', array(
+        'label' => 'Text',
+        'section' => 'lwp-footer-callout-section',
+        'settings' => 'lwp-footer-callout-text',
+        'type' => 'textarea'
+    )));
+
+    $wp_customize->add_setting('lwp-footer-callout-link');
+
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'lwp-footer-callout-link-control', array(
+        'label' => 'Link',
+        'section' => 'lwp-footer-callout-section',
+        'settings' => 'lwp-footer-callout-link',
+        'type' => 'dropdown-pages'
+    )));
+
+
+
+
 
 
 }

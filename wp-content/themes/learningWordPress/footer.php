@@ -6,9 +6,8 @@
 			</div>
 
 			<div class="footer-callout-text">
-				<h2><?php echo get_theme_mod('lwp-footer-callout-link') ?></h2>
-
-				<p>earn more</p>
+				<h2><a href="<?php echo get_permalink(get_theme_mod('lwp-footer-callout-link')) ?>"><?php echo get_theme_mod('lwp-footer-callout-headline') ?></a></h2>
+				<?php echo wpautop(get_theme_mod('lwp-footer-callout-text')) ?>
 			</div>
 		</div>
 
