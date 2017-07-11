@@ -42,18 +42,25 @@
         )); ?>
 
         <div class="about-author-text">
-            <h3>Author</h3>
+            <h3>About the Author</h3>
             <?php echo wpautop(get_the_author_meta('description')) ?>
 
-            <div class="other-posts-by">
-                <h4>Other posts by <?php echo get_the_author_meta('nickname') ?></h4>
-                <ul>
-                    <?php while ($otherAuthorPosts->have_posts()) {
-                        $otherAuthorPosts->the_post(); ?>
-                        <li><a href="<?php the_permalink() ?>"><?php the_title() ?></a></li>
-                    <?php } ?>
-                </ul>
-            </div>
+            <?php if ($otherAuthorPosts->have_posts()) { ?>
+                <div class="other-posts-by">
+                    <h4>Other posts by <?php echo get_the_author_meta('nickname') ?></h4>
+                    <ul>
+                        <?php while ($otherAuthorPosts->have_posts()) {
+                            $otherAuthorPosts->the_post(); ?>
+                            <li><a href="<?php the_permalink() ?>"><?php the_title() ?></a></li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            <?php } wp_reset_postdata() ?>
+
+            <?php if (count_user_posts(get_the_author_meta('ID')) > 3) { ?>
+                <a class="btn-a" href="<?php echo get_author_posts_url(get_the_author_meta('ID')) ?>">View all posts by <?php echo get_the_author_meta('nickname') ?></a>
+            <?php } ?>
+
         </div>
     </div>
 

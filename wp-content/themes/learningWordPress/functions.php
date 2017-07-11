@@ -200,7 +200,6 @@ function learningWordPress_customize_css() { ?>
 
 add_action('wp_head', 'learningWordPress_customize_css');
 
-
 // Add Footer callout section to admin appearance customize screen
 function lwp_footer_callout($wp_customize) {
     $wp_customize->add_section('lwp-footer-callout-section', array(
@@ -258,8 +257,6 @@ function lwp_footer_callout($wp_customize) {
         'width' => 750,
         'height' => 500
     )));
-
-
 }
 
 add_action('customize_register', 'lwp_footer_callout');
