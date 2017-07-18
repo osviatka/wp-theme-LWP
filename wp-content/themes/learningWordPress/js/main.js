@@ -4,7 +4,7 @@ var portfolioPostsContainer = document.getElementById("portfolio-posts-container
 if(portfolioPostsBtn) {
     portfolioPostsBtn.addEventListener("click", function () {
         var ourRequest = new XMLHttpRequest();
-        ourRequest.open('GET', 'http://learningwordpress/wp-json/wp/v2/posts?categories=11&order=asc');
+        ourRequest.open('GET', magicalData.siteURL + '/wp-json/wp/v2/posts?categories=11&order=asc');
         ourRequest.onload = function() {
             if (ourRequest.status >= 200 && ourRequest.status < 400) {
                 var data = JSON.parse(ourRequest.responseText);
@@ -48,6 +48,16 @@ if (quickAddButton){
         createPost.setRequestHeader("X-WP-Nonce", magicalData.nonce);
         createPost.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         createPost.send(JSON.stringify(ourPostData));
+        createPost.onreadystatechange = function() {
+            if (createPost.readyState == 4) {
+                if (createPost.status == 201) {
+                    document.querySelector('.admin-quick-add [name="title"]').value = '';
+                    document.querySelector('.admin-quick-add [name="content"]').value = '';
+                } else {
+                    alert("Error - try again.");
+                }
+            }
+        }
     });
 }
 
