@@ -4,7 +4,7 @@ var portfolioPostsContainer = document.getElementById("portfolio-posts-container
 if(portfolioPostsBtn) {
     portfolioPostsBtn.addEventListener("click", function () {
         var ourRequest = new XMLHttpRequest();
-        ourRequest.open('GET', 'http://learningwordpress/wp-json/wp/v2/posts?categories=');
+        ourRequest.open('GET', 'http://learningwordpress/wp-json/wp/v2/posts?categories=3');
         ourRequest.onload = function() {
             if (ourRequest.status >= 200 && ourRequest.status < 400) {
                 var data = JSON.parse(ourRequest.responseText);
